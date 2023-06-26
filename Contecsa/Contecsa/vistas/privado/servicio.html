@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicio</title>
+    <!-- link css bosstrapp -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../../recursos/css/Descuento.css">
+    <link rel="stylesheet" href="../../recursos/css/tabla.css">
+    <!--Boxicons CDN Link-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--Unicos CDN Link-->
+    <!-- <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"> -->
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+    </div>
+
+    <section class="home-section">
+        <div class="home-content">
+            <i class='bx bx-menu'></i>
+            <span class="text">Dashboard</span>
+
+        </div>
+
+
+        <div class="cotainer p-30">
+            <div class="row">
+                <div class="col-md-12 main-datatable">
+                    <div class="card_body">
+                        <div class="row d-flex">
+                            <div class="col-sm-4 createSegment">
+                                <a class="btn dim_button create_new" data-bs-toggle="modal" data-bs-target="#save-modal"
+                                    onclick="openCreate()">
+                                    <span class="glyphicon glyphicon-plus"></span> Create New</a>
+
+                            </div>
+                            <div class="col-sm-8 add_flex">
+                                <form id="search-form" method="post" class="form-group searchInput">
+                                    <label for="email">Search:</label>
+                                    <input type="search" class="form-control" id="search" name="search" placeholder="
+                                        ">
+                                </form>
+                            </div>
+
+                        </div>
+                        <div class="overflow-x">
+                            <table style="width: 100%;" id="filtertable"
+                                class="table cust-datatable dataTable no-footer">
+                                <thead>
+                                    <tr>
+                                        <th style="min-width: 20px;">Id</th>
+                                        <th style="min-width: 30px;">Nombre servicio</th>
+                                        <th style="min-width: 120px;">Descripcion</th>
+                                        <th style="min-width: 50px;">Valor</th>
+                                        <th style="min-width: 50px;">Fecha inicio</th>
+                                        <th style="min-width: 50px;">Fecha fin</th>
+                                        <th style="min-width: 100px;">nombre empleado</th>
+                                        <th style="min-width: 100px;">estado servicio</th>
+                                        <th style="min-width: 100px;">tipo servicio</th>
+                                        <th style="min-width: 40px;">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody-rows">
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="save-modal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 id="modal-title" id="staticBackdropLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="save-form" method="post" class="was-validated row g-3" enctype="multipart/form-data">
+                            <input class="visually-hidden-focusable" type="number" id="id" name="id">
+                            <div class="col-md-12">
+                                <label for="validationServer01" class="form-label">Nombre servicio</label>
+                                <input id="nombre" name="nombre" type="text" class="form-control is-valid"
+                                    id="validationServer01" value="" placeholder="nombre servicio" required>
+                                <div class="invalid-feedback">
+                                    Por favor ingrese una datos en el área de texto.
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col-md-12">
+                                <label for="validationTextarea" class="form-label">Descripcion servicio</label>
+                                <textarea id="descripcion" name="descripcion" class="form-control is-invalid"
+                                    id="validationTextarea" placeholder="área de texto de ejemplo requerida"
+                                    required></textarea>
+                                <div class="invalid-feedback">
+                                    Por favor ingrese una descripcion en el área de texto.
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="validationServer01" class="form-label">Valor del servicio (US$)</label>
+                                <input id="valor" name="valor" step="0.01" type="number" class="form-control is-valid"
+                                    id="validationServer01" value="" placeholder="valor" min="0" required>
+                                <div class="invalid-feedback">
+                                    Por favor ingrese una datos en el área de texto.
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12">
+                                <label for="validationServer01" class="form-label">Fecha inicio</label>
+                                <input id="fecha_inicio" name="fecha_inicio" type="date" class="form-control is-valid"
+                                    id="validationServer01" value="" required>
+                                <div class="invalid-feedback">
+                                    Por favor ingrese una datos en el área de texto.
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="validationServer01" class="form-label">Fecha fin</label>
+                                <input id="fecha_fin" name="fecha_fin" type="date" class="form-control is-valid"
+                                    id="validationServer01" value="" required>
+                                <div class="invalid-feedback">
+                                    Por favor ingrese una datos en el área de texto.
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>Empleado</label>
+                                <select class="form-select" required aria-label="select example" id="empleado"
+                                    name="empleado">
+                                    <option value="">Seleccione una opcion</option>
+
+                                </select>
+                                <div class="invalid-feedback">Ejemplo de comentarios de selección no válidos
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>Estado</label>
+                                <select class="form-select" required aria-label="select example" id="estado"
+                                    name="estado">
+                                    <option value="">Seleccione una opcion</option>
+
+                                </select>
+                                <div class="invalid-feedback">Ejemplo de comentarios de selección no válidos
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>Tipo del servicio</label>
+                                <select class="form-select" required aria-label="select example" id="tipo" name="tipo">
+                                    <option value="">Seleccione una opcion</option>
+
+                                </select>
+                                <div class="invalid-feedback">Ejemplo de comentarios de selección no válidos
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- fin del modal -->
+<!-- Segundo Modal para planilla -->
+<div class="modal fade" id="Planilla_modal" tabindex="-1" aria-labelledby="Planilla_modal1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title-planilla" id="Planilla_modal1">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <!-- contenido del modal -->
+                <form action="" method="post" id="save-form-planilla">
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Dias trabajados</th>
+                                <th scope="col">Fecha inicio</th>
+                                <th scope="col">Fecha fin</th>
+                                <th scope="col">Estado planilla</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tboby-row-planilla">
+
+                        </tbody>
+                    </table>
+
+
+                </form>
+
+                <!-- fin del contenido del modal -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fin del modal -->
+
+        </div>
+
+    </section>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- <script src="../../recursos/js/tablas.js"></script> -->
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.14/js/jquery.dataTables.min.js"></script>
+
+
+    <!-- <script src="../../recursos/js/tablas.js"></script> -->
+    <script src="../../recursos/js/sweetalert.min.js"></script>
+    <script src="../../controllers/privado/account.js"></script>
+    <script src="../../controllers/components.js"></script>
+    <script src="../../controllers/privado/servicio.js"></script>
+
+</body>
+
+</html>

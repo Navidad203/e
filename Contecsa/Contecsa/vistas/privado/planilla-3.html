@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas</title>
+    <!-- link css bosstrapp -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../../recursos/css/Descuento.css">
+    <link rel="stylesheet" href="../../recursos/css/tabla.css">
+    <!--Boxicons CDN Link-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--Unicos CDN Link-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="sidebar">
+
+    </div>
+
+    <section class="home-section">
+        <div class="home-content">
+            <i class='bx bx-menu'></i>
+            <span class="text">Dashboard</span>
+
+        </div>
+
+
+        <div class="cotainer p-30">
+            <div class="row">
+                <div class="col-md-12 main-datatable">
+                    <div class="card_body">
+                        <div class="row d-flex">
+                            <div class="col-sm-4 createSegment">
+                                <a class="btn dim_button create_new" data-bs-toggle="modal"
+                                    data-bs-target="#save-modal">
+                                    <span class="glyphicon glyphicon-plus"></span> Create New</a>
+                            </div>
+                            <div class="col-sm-8 add_flex">
+                                <div class="form-group searchInput">
+                                    <label for="email">Search:</label>
+                                    <input type="search" class="form-control" id="filterbox" placeholder="
+                                        ">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="overflow-x">
+                            <table style="width: 100%;" id="filtertable"
+                                class="table cust-datatable dataTable no-footer">
+                                <thead>
+                                    <tr>
+                                        <th style="min-width: 50px;">Id</th>
+                                        <th style="min-width: 150px;">Dias trabajados</th>
+                                        <th style="min-width: 150px;">Fecha inicio</th>
+                                        <th style="min-width: 100px;">Fecha fin</th>
+                                        <th style="min-width: 100px;">Estado planilla</th>
+                                        <th style="min-width: 150px;">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>5</td>
+                                        <td>2023-05-01</td>
+                                        <td>2023-05-30</td>
+                                        <td><span class="mode mode_off">en proceso</span></td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a class="dropdown_icon" id="dropdownMenuButton1"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="fa fa-pencil-square-o"></i>
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                    <li>
+                                                        <a data-bs-toggle="modal" data-bs-target="#Planilla_modal">
+                                                            Detalle planilla
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+
+                                            <div class="btn-group">
+                                                <a class="dropdown_icon" id="dropdownMenuButton1"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="fa fa-ellipsis-h"></i>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-more">
+                                                    <li>
+                                                        <a href="#" class="dropdown-item">
+                                                            <i class="fa fa-clone"></i>
+                                                            Actualizar
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="dropdown-item">
+                                                            <i class="fa fa-trash"></i>
+                                                            Eliminar
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="dropdown-item">
+                                                            <i class="fa fa-list"></i>
+                                                            Detalle planilla
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>1</td>
+                                        <td>5</td>
+                                        <td>2023-05-01</td>
+                                        <td>2023-05-30</td>
+                                        <td><span class="mode mode_on">finalizado</span></td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a class="dropdown_icon" id="dropdownMenuButton1"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="fa fa-pencil-square-o"></i>
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                    <li>
+                                                        <a data-bs-toggle="modal" data-bs-target="#Planilla_modal">
+                                                            Detalle planilla
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+
+                                            <div class="btn-group">
+                                                <a class="dropdown_icon" id="dropdownMenuButton1"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="fa fa-ellipsis-h"></i>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-more">
+                                                    <li>
+                                                        <a href="#" class="dropdown-item">
+                                                            <i class="fa fa-clone"></i>
+                                                            Actualizar
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="dropdown-item">
+                                                            <i class="fa fa-trash"></i>
+                                                            Eliminar
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="dropdown-item">
+                                                            <i class="fa fa-list"></i>
+                                                            Detalle planilla
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- primer modal -->
+        <div id="save-modal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 id="modal-title" id="staticBackdropLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="save-form" method="post" class="was-validated row g-3" enctype="multipart/form-data">
+                            <input class="visually-hidden-focusable" type="number" id="id" name="id">
+                            <div class="col-md-12">
+                                <label for="validationServer01" class="form-label">Nombre producto</label>
+                                <input id="nombre" name="nombre" type="text" class="form-control is-valid"
+                                    id="validationServer01" value="" placeholder="nombre producto" required>
+                                <div class="invalid-feedback">
+                                    Por favor ingrese una datos en el área de texto.
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col-md-12">
+                                <label for="validationTextarea" class="form-label">Descripcion</label>
+                                <textarea id="descripcion" name="descripcion" class="form-control is-invalid"
+                                    id="validationTextarea" placeholder="área de texto de ejemplo requerida"
+                                    required></textarea>
+                                <div class="invalid-feedback">
+                                    Por favor ingrese una descripcion en el área de texto.
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="validationServer01" class="form-label">Precio (US$)</label>
+                                <input id="precio" name="precio" step="0.01" type="number" class="form-control is-valid"
+                                    id="validationServer01" value="" placeholder="precio" min="0" required>
+                                <div class="invalid-feedback">
+                                    Por favor ingrese una datos en el área de texto.
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col-md-6">
+                                <label>Categoría</label>
+                                <select class="form-select" required aria-label="select example" id="categoria"
+                                    name="categoria">
+                                    <option value="">Seleccione una opcion</option>
+
+                                </select>
+                                <div class="invalid-feedback">Ejemplo de comentarios de selección no válidos
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Editorial</label>
+                                <select class="form-select" required aria-label="select example" id="editorial"
+                                    name="editorial">
+                                    <option value="">Seleccione una opcion</option>
+
+                                </select>
+                                <div class="invalid-feedback">Ejemplo de comentarios de selección no válidos
+                                </div>
+                            </div>
+                            <br>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Estado</label>
+                                <div class="toggler">
+                                    <input id="toggler-1" name="toggler-1" type="checkbox" value="1">
+                                    <label for="toggler-1">
+                                        <svg class="toggler-on" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 130.2 130.2">
+                                            <polyline class="path check" points="100.2,40.2 51.5,88.8 29.8,67.5">
+                                            </polyline>
+                                        </svg>
+                                        <svg class="toggler-off" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 130.2 130.2">
+                                            <line class="path line" x1="34.4" y1="34.4" x2="95.8" y2="95.8"></line>
+                                            <line class="path line" x1="95.8" y1="34.4" x2="34.4" y2="95.8"></line>
+                                        </svg>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>usuario</label>
+                                <select class="form-select" required aria-label="select example" id="usuario"
+                                    name="usuario">
+                                    <option value="">Seleccione una opcion</option>
+
+                                </select>
+                                <div class="invalid-feedback">Ejemplo de comentarios de selección no válidos
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label>autor</label>
+                                <select class="form-select" required aria-label="select example" id="autor"
+                                    name="autor">
+                                    <option value="">Seleccione una opcion</option>
+
+                                </select>
+                                <div class="invalid-feedback">Ejemplo de comentarios de selección no válidos
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="validationServer01" class="form-label">Porcentaje descuento</label>
+                                <input id="Porcentaje" name="Porcentaje" type="text" class="form-control is-valid"
+                                    id="validationServer01" value="" placeholder="Porcentaje" required>
+                                <div class="invalid-feedback">
+                                    Por favor ingrese datos en el área de texto.
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col-md-6">
+                                <label for="validationServer01" class="form-label">isbn</label>
+                                <input id="isbn" name="isbn" type="text" class="form-control is-valid"
+                                    id="validationServer01" value="" placeholder="isbn" required>
+                                <div class="invalid-feedback">
+                                    Por favor ingrese datos en el área de texto.
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col-md-12">
+                                <label for="validationServer01" class="form-label">Imagen</label>
+                                <input id="archivo" name="archivo" type="file" class="form-control"
+                                    aria-label="file example" accept=".jpg, .png">
+                                <div class="invalid-feedback">Seleccione un archivo tipo jpg o png</div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="validationServer01" class="form-label">stock</label>
+                                <input id="stock" name="stock" type="text" class="form-control is-valid"
+                                    id="validationServer01" value="" placeholder="stock" required>
+                                <div class="invalid-feedback">
+                                    Por favor ingrese datos en el área de texto.
+                                </div>
+                            </div>
+                            <br>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- fin del modal -->
+
+        <!-- segundo modal -->
+
+        <div class="modal fade" id="Planilla_modal" tabindex="-1" aria-labelledby="Planilla_modal1" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title-planilla" id="Planilla_modal1"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <!-- contenido del modal -->
+                        <form action="" method="post" id="save-form-planilla">
+
+                            <div class="row d-flex">
+                                <div class="col-sm-4 createSegment">
+                                    <h5 class="modal-title-planilla" id="Planilla_modal1">DETALLE PLANILLA</h5>
+                                </div>
+                                <div class="col-sm-8 add_flex">
+                                    <button class="my-button">
+                                        1
+                                    </button>
+                                    <button class="my-button">
+                                        2
+                                    </button>
+                                    <button class="my-button">
+                                        2
+                                    </button>
+
+                                </div>
+                            </div>
+                            
+                                <table class="table table-striped table-hover table-bordered">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">id</th>
+                                        <th scope="col">nombre</th>
+                                        <th scope="col">planilla</th>
+                                        <th scope="col">detalle comision</th>
+                                        <th scope="col">usuario</th>
+                                        <th scope="col">horas extra</th>
+                                        <th scope="col">salario base</th>
+                                        <th scope="col">total descuento</th>
+                                        <th scope="col">acciones</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Daniel Juarez</td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a  class="dropdown_icon" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="fa fa-pencil-square-o"></i>
+                                                    </a>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                        <li>
+                                                            <a>
+                                                                planilla
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a  class="dropdown_icon" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="fa fa-pencil-square-o"></i>
+                                                    </a>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                        <li>
+                                                            <a>
+                                                                Detalle Comision
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>Vanessa Nicole</td>
+                                            <td>5h</td>
+                                            <td>100.00</td>
+                                            <td>300.00</td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a  class="dropdown_icon" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="fa fa-pencil-square-o"></i>
+                                                    </a>
+                                                    <ul class="dropdown-menu dropdown-more">
+                                                        <li>
+                                                            <a>
+                                                                <i class="fa fa-pencil-square-o"></i>
+                                                                Editar
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a>
+                                                                <i class="fa fa-trash"></i>
+                                                                Eliminar
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Daniel Juarez</td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a  class="dropdown_icon" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="fa fa-pencil-square-o"></i>
+                                                    </a>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                        <li>
+                                                            <a>
+                                                                planilla
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a  class="dropdown_icon" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="fa fa-pencil-square-o"></i>
+                                                    </a>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                        <li>
+                                                            <a>
+                                                                Detalle Comision
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>Vanessa Nicole</td>
+                                            <td>5h</td>
+                                            <td>100.00</td>
+                                            <td>300.00</td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a  class="dropdown_icon" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="fa fa-pencil-square-o"></i>
+                                                    </a>
+                                                    <ul class="dropdown-menu dropdown-more">
+                                                        <li>
+                                                            <a>
+                                                                <i class="fa fa-pencil-square-o"></i>
+                                                                Editar
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a>
+                                                                <i class="fa fa-trash"></i>
+                                                                Eliminar
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Daniel Juarez</td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a  class="dropdown_icon" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="fa fa-pencil-square-o"></i>
+                                                    </a>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                        <li>
+                                                            <a>
+                                                                planilla
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a  class="dropdown_icon" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="fa fa-pencil-square-o"></i>
+                                                    </a>
+                                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                                        <li>
+                                                            <a>
+                                                                Detalle Comision
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>Vanessa Nicole</td>
+                                            <td>5h</td>
+                                            <td>100.00</td>
+                                            <td>300.00</td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <a  class="dropdown_icon" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="fa fa-pencil-square-o"></i>
+                                                    </a>
+                                                    <ul class="dropdown-menu dropdown-more">
+                                                        <li>
+                                                            <a>
+                                                                <i class="fa fa-pencil-square-o"></i>
+                                                                Editar
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a>
+                                                                <i class="fa fa-trash"></i>
+                                                                Eliminar
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                     
+                                    </tbody>
+                                  </table>
+
+                        </form>
+
+                        <!-- fin del contenido del modal -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- fin del segundo modal -->
+
+
+        </div>
+
+    </section>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script src="../../recursos/js/tablas.js"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.14/js/jquery.dataTables.min.js"></script>
+
+
+    <!-- <script src="../../recursos/js/tablas.js"></script> -->
+    <script src="../../recursos/js/sweetalert.min.js"></script>
+    <script src="../../controllers/privado/account.js"></script>
+    <script src="../../controllers/components.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+.section-perfil .seccion-body{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+.section-perfil{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-perfil .perfil-usuario{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient( #b573ff,transparent);
+    margin-bottom: 1.25rem;
+}
+
+.section-perfil .perfil-portada{
+    display: block;
+    position: relative;
+    width: 90%;
+    height: 17rem;
+    background:linear-gradient(45deg, #bc3cff,#317fff);
+    border-radius: 0 0 25px 25px;
+} 
+
+
+.section-perfil .perfil-avatar img{
+    width: 100%;
+    position: relative;
+
+}
+
+img{
+    width: 100%;
+    position: relative;
+}
+
+.section-perfil .perfil-avatar{
+    display: flex;
+    width: 180px;
+    height: 180px;
+    align-items: center;
+    justify-content: center;
+    border: 7px solid #FFFF;
+    background-color: #dfe5f2;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    position: absolute;
+    bottom: -40px;
+    left: calc(50% - 90px);
+    z-index: 1;
+    overflow: hidden;
+}
+
+.section-perfil .seccion-body{
+    width: 90%;
+}
+
+.section-perfil .usuario-footer{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5rem 2rem;
+    box-shadow:  0 0 12px rgba(0, 0, 0, .2) ;
+    background-color: #FFFF;
+    border-radius: 15px;
+    text-align: center;
+    width: 100%;
+
+}
+.section-perfil .usuario-perfil{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5rem 2rem;
+    box-shadow:  0 0 12px rgba(0, 0, 0, .2) ;
+    background-color: #FFFF;
+    border-radius: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.section-perfil .usuario-footer{
+    padding: 10px;
+}
+
+.section-perfil .seccion-body {
+    width: 75%;
+}
+
+.section-perfil .seccion-body .titulo{
+    display: block;
+    width: 100%;
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+
+
+.section-perfil .usuario-perfil{
+    margin-bottom: 1.25rem;
+}
+
+
+.section-perfil .lista-datos{
+    width: 50%;
+    list-style: none;
+
+}
+
+.section-perfil .lista-datos li{
+padding: 5px 0 ;   
+}
+
+/* .section-perfil .lista-datos li > .icon */

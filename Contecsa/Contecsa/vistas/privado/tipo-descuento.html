@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipo descuento</title>
+
+    <link rel="stylesheet" href="../../recursos/css/Descuento.css">
+    <!--Boxicons CDN Link-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--Unicos CDN Link-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!--javascript CDN Link-->
+    <script src="../../recursos/js/menu.js" defer></script>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        
+    </div>
+
+    <section class="home-section">
+        <div class="home-content">
+            <i class='bx bx-menu'></i>
+            <span class="text">Dashboard</span>
+        </div>
+
+        <div class="dash-content">
+            <div class="overview">
+                <div class="title">
+                    <button class="btnmas" onclick="window.modal.showModal();">Agregar</button>
+                    <br>
+                    <br>
+                    <dialog id="modal">
+
+                        <h2>Tipo Descuentos</h2>
+                        <form action="#">
+
+                            <div class="input-container">
+                                <input type="text" id="input" required="">
+                                <label for="input" class="label">Nombre descuento</label>
+                                <div class="underline"></div>
+                            </div>
+
+                            <div class="input-container">
+                                <input type="text" id="input" required="">
+                                <label for="input" class="label">Nombre descuento</label>
+                                <div class="underline"></div>
+                            </div>
+
+
+
+
+                        </form>
+                        <br>
+                        <button class="btn-cancelar" onclick="window.modal.close();"><svg
+                                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-x-lg" viewBox="0 0 16 16">
+                                <path
+                                    d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+                            </svg> Cancelar </button>
+                        <br>
+                        <br>
+                        <button type="button" class="btn-cancelar"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                height="16" fill="currentColor" class="bi bi-file-earmark-text" viewBox="0 0 16 16">
+                                <path
+                                    d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z" />
+                                <path
+                                    d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z" />
+                            </svg> Guardar</button>
+
+                    </dialog>
+                    </form>
+                </div>
+
+                <div class="activity">
+                    <div class="title">
+                        <i class="uil uil-clock-three"></i>
+                        <span class="text">Tipo descuentos</span>
+                    </div>
+
+                    <div class="activity-data">
+                        <div class="data names">
+                            <span class="data-title">Nombre descuento</span>
+                            <span class="data-list">Nombre descuento</span>
+                            <span class="data-list">Nombre descuento</span>
+                            <span class="data-list">Nombre descuento</span>
+                            <span class="data-list">Nombre descuento</span>
+                            <span class="data-list">Nombre descuento</span>
+                            <span class="data-list">Nombre descuento</span>
+                            <span class="data-list">Nombre descuento</span>
+                        </div>
+
+                        <div class="data joined">
+                            <span class="data-title">Acciones</span>
+                            <span class="data-list"><img src="../../recursos/img/icons8-editar-propiedad-32.png" alt="">
+                                <img src="../../recursos/img/icons8-basura-32.png" alt=""></span>
+                            <span class="data-list"><img src="../../recursos/img/icons8-editar-propiedad-32.png" alt="">
+                                <img src="../../recursos/img/icons8-basura-32.png" alt=""></span>
+                            <span class="data-list"><img src="../../recursos/img/icons8-editar-propiedad-32.png" alt="">
+                                <img src="../../recursos/img/icons8-basura-32.png" alt=""></span>
+                            <span class="data-list"><img src="../../recursos/img/icons8-editar-propiedad-32.png" alt="">
+                                <img src="../../recursos/img/icons8-basura-32.png" alt=""></span>
+                            <span class="data-list"><img src="../../recursos/img/icons8-editar-propiedad-32.png" alt="">
+                                <img src="../../recursos/img/icons8-basura-32.png" alt=""></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    </section>
+    <script src="../../recursos/js/sweetalert.min.js"></script>
+    <script src="../../controllers/privado/account.js"></script>
+    <script src="../../controllers/components.js"></script>
+
+</body>
+
+</html>
